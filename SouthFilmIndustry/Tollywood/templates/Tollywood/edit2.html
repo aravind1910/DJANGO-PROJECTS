@@ -1,0 +1,11 @@
+{% extends 'Tollywood/mainpage.html' %}
+
+{% block content %}
+<div>
+  <form action="{% url 'edit2' data.id %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" name="save">
+  </form>
+</div>
+{% endblock %}

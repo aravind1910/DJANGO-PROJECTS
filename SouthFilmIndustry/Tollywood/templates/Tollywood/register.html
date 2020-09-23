@@ -1,0 +1,20 @@
+{% extends 'Tollywood/mainpage.html' %}
+{% block content %}
+<div class ="row">
+  <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <div class=" card ">
+        <div class="card-header text-center text-primary bg-warning">Hero Registration</div>
+        <div class="card-body text-center">
+          <form action="{% url 'register' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" name="Submit">
+          </form>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  <div class="col-sm-2"></div>
+</div>
+{% endblock %}

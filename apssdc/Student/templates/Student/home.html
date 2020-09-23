@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HomePage</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css/' %}">
+        <style>
+            body{
+                background-color: aqua;
+                text-align: center;
+            }
+            h2{
+                color:blue;
+            }
+        </style>
+        <script type="text/javascript" src="{% static 'js/js1.js/'%}"></script>
+    </head>
+    <body>
+        <h1> Welcome to Django </h1>
+        <h2> This is Nemo!</h2>
+        <h3 style="color:brown;"> The Quintessential Voyager</h3>
+        <img src="{% static 'images/Aravind.jpg/' %}">
+        <img src="https://nym.ag/2XztXfs">
+    </body>
+</html>

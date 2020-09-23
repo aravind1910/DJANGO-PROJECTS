@@ -1,0 +1,35 @@
+{% extends 'Tollywood/mainpage.html' %}
+{% block content %}
+<div class="row">
+    <div class=" col-sm-2"></div>
+    <div class="col-sm-6">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Profile</th>
+                <th>Signature</th>
+                <th>Operations</th>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{i.heroname}}</td>
+                <td>{{i.heroage}}</td>
+                <td>{{i.herogender}}</td>
+                <td>{{i.heroemail}}</td>
+                <td><img style="height:40px;" src="{{i.heroimage.url}}" alt="My image"></td>
+                <td><img style="height:40px;" src="{{i.heroautograph.url}}" alt="My image"></td>
+                <td style="width: 280px" colspan="3">
+                    <a href="{% url 'edit' i.id %}" ><button class="btn btn-danger">Edit</button></a>
+                    <a href="{% url 'edit2' i.id %}" ><button class="btn btn-success">Edit Partial</button></a>
+                    <a href="{% url 'delete' i.id %}" ><button class="btn btn-warning">Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class=" col-sm-2"></div>
+</div>
+{% endblock %}

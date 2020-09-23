@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+    </head>
+    <body>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            First Name: <input type="text" name="fname"><br><br>
+            Last Name: <input type="text" name="lname"><br><br>
+            Email: <input type="email" name="email"><br><br>
+            Age: <input type="number" name="age"><br><br>
+            Mobile: <input type="tel" name="tel"><br><br>
+            Gender: <input type="radio" name="gender" value="Male">
+            <input type="radio" name="gender" value="Female"><br><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" name="submit">
+        </form>
+    </body>
+</html>

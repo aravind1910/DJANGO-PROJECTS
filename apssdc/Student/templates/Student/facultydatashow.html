@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Faculty Data</title>
+    </head>
+    <body>
+        <table align="center" border="5">
+            <tr>
+                <td>Name</td>
+                <td>ID</td>
+                <td>Email</td>
+                <td>Age</td>
+            </tr>
+        {% for i in info %}
+        <tr>
+            <td>{{i.FacName}}</td>
+            <td>{{i.FacID}}</td>
+            <td>{{i.FacEmail}}</td>
+            <td>{{i.FacAge}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+
+</html>

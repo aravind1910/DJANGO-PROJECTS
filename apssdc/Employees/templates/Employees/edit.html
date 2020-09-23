@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form action="{% url 'update' obj.id %}" method="POST">
+                    <div class="card">
+                        <div class="card-header bg-warning text-danger ">Signup</div>
+                        <div class="card-body">
+                            {% csrf_token %}
+                            <label class="text-primary">First Name:</label> <input value="{{obj.Emp_Firstname}}" class="form-control" type="text" name="fname">
+                            <label class="text-primary">Last Name:</label> <input value="{{obj.Emp_Lastname}}" class="form-control" type="text" name="lname">
+                            <label class="text-primary">Email:</label> <input value="{{obj.Emp_Email}}" class="form-control" type="email" name="email">
+                            <label class="text-primary">Age:</label> <input value="{{obj.Emp_Age}}" class="form-control" type="number" name="age">
+                            <label class="text-primary">ID:</label> <input value="{{obj.Emp_Id}}" class="form-control" type="text" name="id">
+                            <label class="text-primary">Salary:</label> <input value="{{obj.Emp_Salary}}" class="form-control" type="text" name="salary">
+                            <div class="form-group">
+                                <label class="text-primary" for="sel1">Gender:</label>
+                                <select value="{{obj.Emp_Gender}}" name="gender" class="form-control" id="sel1">
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="text-primary" for="sel1">Department:</label>
+                                <select value="{{obj.Emp_Department}}" name="dept" class="form-control" id="sel1">
+                                  <option value="HR">HR</option>
+                                  <option value="Accounts">Accounts</option>
+                                  <option value="R&D">R&D</option>
+                                </select>
+                            </div>
+                            <label class="text-primary">Password:</label> <input value="{{ obj.Emp_Password }}" class="form-control" type="password" name="password"><br>
+                            <input class="form-control bg-primary text-light" type="submit" name="submit">
+                        </div>
+                    </div>
+                    </form>
+                
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </body>
+</html>
